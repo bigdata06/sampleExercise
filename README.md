@@ -1,5 +1,10 @@
 # sampleExercise
 
+## Cassandra table schema
+
+    CREATE KEYSPACE test WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1 };
+    CREATE TABLE test.weather(loc varchar,  date timestamp, tmax int, tmin int, PRIMARY KEY (loc, date)) with clustering order by (date asc);
+
 ## Build
 
     sbt/sbt assembly 

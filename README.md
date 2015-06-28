@@ -11,6 +11,7 @@
 
     mkdir data
     cd data
+    wget ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2015.csv.gz
 
 Use `wget` to retrieve [daily summaries](ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/) of weather data from NOAA's FTP. Unzip `*.csv.gz` files and put them into `data/`.
 

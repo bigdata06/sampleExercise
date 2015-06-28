@@ -1,5 +1,19 @@
 # sampleExercise
 
+
+## Preparing the data
+
+### Dataset
+
+    ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
+
+### Retrieve daily summaries of weather data
+
+    mkdir data
+    cd data
+
+Use `wget` to retrieve [daily summaries](ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/) of weather data from NOAA's FTP. Unzip `*.csv.gz` files and put them into `data/`.
+
 ## Cassandra table schema
 
     CREATE KEYSPACE test WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1 };
@@ -15,7 +29,7 @@
  
 ## Run
 
-The main class is `org.viirya.weather.SparkApp` which needs to specify Cassandra host address.
+The main class is `org.viirya.weather.SparkApp` which can be used to insert daily summaries of weather data into Cassandra database and perform simple analysis.
 
 ### Insert weather data into Cassandra
 

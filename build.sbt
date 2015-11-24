@@ -12,7 +12,7 @@ libraryDependencies ++= {
   Seq(
     "org.scalatest"                 %%  "scalatest"                 % "2.2.5"       % "test",
     "org.apache.spark"              %%  "spark-core"                % "1.4.0"       % "provided",
-    "com.datastax.spark"            %%  "spark-cassandra-connector" % "1.4.0-M1"
+    "com.datastax.spark"            %%  "spark-cassandra-connector" % "1.5.0-M1"
   )
 }
 

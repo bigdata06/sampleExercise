@@ -56,7 +56,23 @@ class WeatherDataReader {
   def parseDate(date: String): String = {
     s"${date.substring(0, 4)}-${date.substring(4, 6)}-${date.substring(6, 8)}"
   }
- 
+
+  def parseWeatherDataWithType(line: String): Option[(String, String, String, String)] = {
+    val fields = line.split(sepChar)
+    if (fields.length >= 4) {
+      val loc = fields(locIndex)
+      val date = parseDate(fields(dateIndex))
+
+      fields(typeIndex) match {
+        case "TMAX" => Some((loc, date, "TMAX", fields(typeIndex + 1)))
+        case "TMIN" => Some((loc, date, "TMIN", fields(typeIndex + 1)))
+        case _ => None
+      }
+    } else {
+      None
+    }
+  }
+
   private def parseWeatherData(line: String): Option[(String, String, String)] = {
     val fields = line.split(sepChar)
     if (fields.length >= 4) {
